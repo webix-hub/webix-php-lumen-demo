@@ -1,21 +1,24 @@
-# Lumen PHP Framework
+# Webix demo for Lumen PHP Framework
 
-[![Build Status](https://travis-ci.org/laravel/lumen-framework.svg)](https://travis-ci.org/laravel/lumen-framework)
-[![Total Downloads](https://poser.pugx.org/laravel/lumen-framework/d/total.svg)](https://packagist.org/packages/laravel/lumen-framework)
-[![Latest Stable Version](https://poser.pugx.org/laravel/lumen-framework/v/stable.svg)](https://packagist.org/packages/laravel/lumen-framework)
-[![Latest Unstable Version](https://poser.pugx.org/laravel/lumen-framework/v/unstable.svg)](https://packagist.org/packages/laravel/lumen-framework)
-[![License](https://poser.pugx.org/laravel/lumen-framework/license.svg)](https://packagist.org/packages/laravel/lumen-framework)
+This package shows how Webix can be used with PHP (Lumen | Laravel) backend.
 
-Laravel Lumen is a stunningly fast PHP micro-framework for building web applications with expressive, elegant syntax. We believe development must be an enjoyable, creative experience to be truly fulfilling. Lumen attempts to take the pain out of development by easing common tasks used in the majority of web projects, such as routing, database abstraction, queueing, and caching.
+There are 3 major cases:
 
-## Official Documentation
+- Loading data into data components (list, datatable, chart, etc. )
+- Loading data in hierarchical components (tree, treetable, etc.)
+- Working with forms
 
-Documentation for the framework can be found on the [Lumen website](http://lumen.laravel.com/docs).
+For data loading the server must provide a GET handler which returns a collection of JSON objects (a single JSON object in case of the form )
 
-## Security Vulnerabilities
+For data saving, a common REST pattern is used. Rest handlers must return a valid JSON object with optional ID value.
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell at taylor@laravel.com. All security vulnerabilities will be promptly addressed.
+### Check also
+
+
+- [NodeJs (Express) samples](//github.com/webix-hub/webix-nodejs-demo)
+- [.Net MVC samples](//github.com/webix-hub/webix-netmvc-demo)
+
 
 ## License
 
-The Lumen framework is open-sourced software licensed under the [MIT license](http://opensource.org/licenses/MIT)
+[MIT license](http://opensource.org/licenses/MIT)
