@@ -1,0 +1,34 @@
+@extends('layouts.app')
+@section('content')
+
+<p>File upload goes in two steps. First a file is uploaded to the server side and the server side returns a json object with the file ID ( it can be the file url if you wish ). After that the form can be saved. The uploader field will provide the ID returned on the previous step, not the file itself.</p>
+<div id='form-container'></div>
+<script>
+var form = webix.ui({
+	view:"form",
+	width: 640,
+	container:"form-container",
+	rows:[
+		{ margin:15, cols:[
+			{ rows:[
+				{ view:"text", name:"name", label:"Name", value:"Alex Brown"},
+				{ view:"text", name:"email", label:"Email", value:"alexb@hotmail.com" },
+				{ height: 80 }
+			]},
+			{ rows:[
+				{ view:"uploader", name:"attachments", value:"Attach File", link:"mylist", upload:"/form/do-upload" },
+				{ view:"list",  id:"mylist",  type:"uploader", autoheight:true, borderless:true }
+			]}
+		]},
+		{ view:"button", value:"Save", click:function(){
+			var data = this.getFormView().getValues();
+			$$("result").setHTML("<pre>"+JSON.stringify(data, true, "\t")+"</pre>")
+		}},
+		{ view:"template", id:"result", height:200 }
+	]	
+});
+
+form.elements.name.focus();
+</script>
+
+@endsection
